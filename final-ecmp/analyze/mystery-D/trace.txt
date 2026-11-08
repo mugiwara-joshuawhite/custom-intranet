@@ -1,0 +1,56 @@
+# s1, packet 2.0: the first packet received on port 1 with IPv4 destination 0a000303
+[2.0] [cxt 0] Processing packet received on port 1
+[2.0] [cxt 0] Parser 'parser': start
+[2.0] [cxt 0] Parser 'parser' entering state 'start'
+[2.0] [cxt 0] Extracting header 'ethernet'
+[2.0] [cxt 0] Parser state 'start': key is 0800
+[2.0] [cxt 0] Bytes parsed: 14
+[2.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[2.0] [cxt 0] Extracting header 'ipv4'
+[2.0] [cxt 0] Parser state 'parse_ipv4': key is 01
+[2.0] [cxt 0] Bytes parsed: 34
+[2.0] [cxt 0] Parser 'parser': end
+[2.0] [cxt 0] Pipeline 'ingress': start
+[2.0] [cxt 0] Condition "hdr.ipv4.isValid()" (node_2) is true
+[2.0] [cxt 0] Applying table 'MyIngress.ecmp_group'
+[2.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0a000303
+[2.0] [cxt 0] Table 'MyIngress.ecmp_group': hit with handle 2
+[2.0] [cxt 0] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000303/32
+Action entry: MyIngress.set_ecmp_select - 2,2,
+[2.0] [cxt 0] Action entry is MyIngress.set_ecmp_select - 2,2,
+[2.0] [cxt 0] Action MyIngress.set_ecmp_select
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] hash(base=0, max=2) = 0
+[2.0] [cxt 0] Applying table 'MyIngress.ecmp_nhop'
+[2.0] [cxt 0] Looking up key:
+* meta.ecmp_group     : 0002
+* meta.ecmp_select    : 0000
+[2.0] [cxt 0] Table 'MyIngress.ecmp_nhop': hit with handle 2
+[2.0] [cxt 0] Dumping entry 2
+Match key:
+* meta.ecmp_group     : EXACT     0002
+* meta.ecmp_select    : EXACT     0000
+Action entry: MyIngress.set_nhop - 80000000300,3,
+[2.0] [cxt 0] Action entry is MyIngress.set_nhop - 80000000300,3,
+[2.0] [cxt 0] Action MyIngress.set_nhop
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] Pipeline 'ingress': end
+[2.0] [cxt 0] Egress port is 3
+[2.0] [cxt 0] Pipeline 'egress': start
+[2.0] [cxt 0] Pipeline 'egress': end
+[2.0] [cxt 0] Deparser 'deparser': start
+[2.0] [cxt 0] Updating checksum 'cksum'
+[2.0] [cxt 0] Deparsing header 'ethernet'
+[2.0] [cxt 0] Deparsing header 'ipv4'
+[2.0] [cxt 0] Deparser 'deparser': end
+[2.0] [cxt 0] Transmitting packet of size 98 out of port 3

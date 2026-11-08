@@ -1,0 +1,53 @@
+# s1, packet 0.0: the first packet received on port 1
+[0.0] [cxt 0] Processing packet received on port 1
+[0.0] [cxt 0] Parser 'parser': start
+[0.0] [cxt 0] Parser 'parser' entering state 'start'
+[0.0] [cxt 0] Extracting header 'ethernet'
+[0.0] [cxt 0] Parser state 'start': key is 1234
+[0.0] [cxt 0] Bytes parsed: 14
+[0.0] [cxt 0] Parser 'parser' entering state 'parse_srcRouting'
+[0.0] [cxt 0] Extracting to header stack 0, next header is 4
+[0.0] [cxt 0] Parser state 'parse_srcRouting': key is 00
+[0.0] [cxt 0] Bytes parsed: 16
+[0.0] [cxt 0] Parser 'parser' entering state 'parse_srcRouting'
+[0.0] [cxt 0] Extracting to header stack 0, next header is 5
+[0.0] [cxt 0] Parser state 'parse_srcRouting': key is 00
+[0.0] [cxt 0] Bytes parsed: 18
+[0.0] [cxt 0] Parser 'parser' entering state 'parse_srcRouting'
+[0.0] [cxt 0] Extracting to header stack 0, next header is 6
+[0.0] [cxt 0] Parser state 'parse_srcRouting': key is 01
+[0.0] [cxt 0] Bytes parsed: 20
+[0.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[0.0] [cxt 0] Extracting header 'ipv4'
+[0.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[0.0] [cxt 0] Bytes parsed: 40
+[0.0] [cxt 0] Parser 'parser': end
+[0.0] [cxt 0] Pipeline 'ingress': start
+[0.0] [cxt 0] Condition "hdr.srcRoutes[0].isValid()" (node_2) is true
+[0.0] [cxt 0] Condition "hdr.srcRoutes[0].bos == 1" (node_3) is false
+[0.0] [cxt 0] Applying table 'tbl_srcRoute_nhop'
+[0.0] [cxt 0] Looking up key:
+[0.0] [cxt 0] Table 'tbl_srcRoute_nhop': miss
+[0.0] [cxt 0] Action entry is MyIngress.srcRoute_nhop - 
+[0.0] [cxt 0] Action MyIngress.srcRoute_nhop
+[0.0] [cxt 0] one statement of the action runs (hidden)
+[0.0] [cxt 0] one statement of the action runs (hidden)
+[0.0] [cxt 0] Condition "hdr.ipv4.isValid()" (node_6) is true
+[0.0] [cxt 0] Applying table 'tbl_update_ttl'
+[0.0] [cxt 0] Looking up key:
+[0.0] [cxt 0] Table 'tbl_update_ttl': miss
+[0.0] [cxt 0] Action entry is MyIngress.update_ttl - 
+[0.0] [cxt 0] Action MyIngress.update_ttl
+[0.0] [cxt 0] one statement of the action runs (hidden)
+[0.0] [cxt 0] Pipeline 'ingress': end
+[0.0] [cxt 0] Egress port is 3
+[0.0] [cxt 0] Pipeline 'egress': start
+[0.0] [cxt 0] Pipeline 'egress': end
+[0.0] [cxt 0] Deparser 'deparser': start
+[0.0] [cxt 0] Updating checksum 'cksum'
+[0.0] [cxt 0] Deparsing header 'ethernet'
+[0.0] [cxt 0] Deparsing header 'srcRoutes[0]'
+[0.0] [cxt 0] Deparsing header 'srcRoutes[1]'
+[0.0] [cxt 0] Deparsing header 'ipv4'
+[0.0] [cxt 0] Deparser 'deparser': end
+[0.0] [cxt 0] Transmitting packet of size 51 out of port 3

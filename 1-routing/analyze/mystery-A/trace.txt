@@ -1,0 +1,37 @@
+# s1, packet 2.0: the first packet received on port 1 with IPv4 destination 0a000303
+[2.0] [cxt 0] Processing packet received on port 1
+[2.0] [cxt 0] Parser 'parser': start
+[2.0] [cxt 0] Parser 'parser' entering state 'start'
+[2.0] [cxt 0] Extracting header 'ethernet'
+[2.0] [cxt 0] Parser state 'start': key is 0800
+[2.0] [cxt 0] Bytes parsed: 14
+[2.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[2.0] [cxt 0] Extracting header 'ipv4'
+[2.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[2.0] [cxt 0] Bytes parsed: 34
+[2.0] [cxt 0] Parser 'parser': end
+[2.0] [cxt 0] Pipeline 'ingress': start
+[2.0] [cxt 0] Condition "hdr.ipv4.isValid()" (node_2) is true
+[2.0] [cxt 0] Applying table 'MyIngress.ipv4_lpm'
+[2.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0a000303
+[2.0] [cxt 0] Table 'MyIngress.ipv4_lpm': hit with handle 2
+[2.0] [cxt 0] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a000303/32
+Action entry: MyIngress.ipv4_forward - 80000000300,3,
+[2.0] [cxt 0] Action entry is MyIngress.ipv4_forward - 80000000300,3,
+[2.0] [cxt 0] Action MyIngress.ipv4_forward
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] one statement of the action runs (hidden)
+[2.0] [cxt 0] Pipeline 'ingress': end
+[2.0] [cxt 0] Egress port is 3
+[2.0] [cxt 0] Pipeline 'egress': start
+[2.0] [cxt 0] Pipeline 'egress': end
+[2.0] [cxt 0] Deparser 'deparser': start
+[2.0] [cxt 0] Updating checksum 'cksum'
+[2.0] [cxt 0] Deparsing header 'ethernet'
+[2.0] [cxt 0] Deparsing header 'ipv4'
+[2.0] [cxt 0] Deparser 'deparser': end
+[2.0] [cxt 0] Transmitting packet of size 98 out of port 3

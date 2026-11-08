@@ -1,0 +1,16 @@
+{
+  "target": "bmv2",
+  "p4info": "build/tunnel.p4.p4info.txt",
+  "bmv2_json": "build/tunnel.json",
+  "table_entries": [
+    {"table": "MyIngress.to_tunnel", "match": {"hdr.ipv4.dstAddr": ["10.2.0.0", 16]},
+     "action_name": "MyIngress.encap",
+     "action_params": {"local": "203.0.113.1", "remote": "198.51.100.2", "port": 1,
+                       "my_mac": "00:00:00:00:02:00", "next_hop_mac": "00:00:00:00:02:fe"}},
+    {"table": "MyIngress.from_tunnel", "match": {"hdr.ipv4.dstAddr": "203.0.113.1"},
+     "action_name": "MyIngress.decap", "action_params": {}},
+    {"table": "MyIngress.lan", "match": {"hdr.ipv4.dstAddr": ["10.1.0.5", 32]},
+     "action_name": "MyIngress.forward",
+     "action_params": {"port": 0, "my_mac": "00:00:00:00:01:00", "host_mac": "00:00:00:00:00:05"}}
+  ]
+}

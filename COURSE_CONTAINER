@@ -1,0 +1,2 @@
+This project runs only inside the CS 4220 course container (CS4220-ComputerNetworks/env).
+Its Python may import what that image installs: grpc, scapy, mininet and PI's p4 module. The P4Runtime helper library this project imports, p4runtime_lib, ships in this starter under utils/, so it is not installed into the image.

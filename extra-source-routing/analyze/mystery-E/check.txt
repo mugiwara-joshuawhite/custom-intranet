@@ -1,0 +1,13 @@
+python3 check.py
+
+
+
+
+FAIL  "3 2 1" reaches h3 through s3: h3 did not receive the packet sent along "3 2 1"
+FAIL  "4 1 1" reaches h3 through s4: h3 did not receive the packet sent along "4 1 1"
+FAIL  the detour "3 1 4 1 1" still arrives, with the TTL it earned: h3 did not receive the packet sent along "3 1 4 1 1"
+FAIL  "3 2 2" reaches h4 instead: h4 did not receive the packet sent along "3 2 2"
+
+0 passed, 4 failed
+*** Error setting resource limits. Mininet's performance may be affected.
+make: *** [../utils/part.mk:26: check] Error 1

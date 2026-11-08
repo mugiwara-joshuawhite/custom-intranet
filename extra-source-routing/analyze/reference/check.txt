@@ -1,0 +1,12 @@
+python3 check.py
+
+
+
+
+PASS  "3 2 1" reaches h3 through s3
+PASS  "4 1 1" reaches h3 through s4
+PASS  the detour "3 1 4 1 1" still arrives, with the TTL it earned
+PASS  "3 2 2" reaches h4 instead
+
+4 passed, 0 failed
+*** Error setting resource limits. Mininet's performance may be affected.

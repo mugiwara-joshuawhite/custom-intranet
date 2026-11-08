@@ -1,0 +1,160 @@
+{
+ "about": "Every switch's ipv4_lpm entries during part 1's last check: the supplied runtime entries plus the /16, /24 and probe /32 entries check.py adds. A destination no entry matches is dropped (the table's default action). h3 holds the two probe addresses during that check.",
+ "default_action": "drop",
+ "switches": {
+  "s1": [
+   {
+    "prefix": "10.0.1.1/32",
+    "action": "forward",
+    "mac": "08:00:00:00:01:11",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.2.2/32",
+    "action": "forward",
+    "mac": "08:00:00:00:02:22",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.3.3/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:00",
+    "port": 3
+   },
+   {
+    "prefix": "10.0.4.4/32",
+    "action": "forward",
+    "mac": "08:00:00:00:04:00",
+    "port": 4
+   },
+   {
+    "prefix": "10.0.0.0/16",
+    "action": "forward",
+    "mac": "08:00:00:00:03:00",
+    "port": 3
+   },
+   {
+    "prefix": "10.0.3.0/24",
+    "action": "drop"
+   }
+  ],
+  "s2": [
+   {
+    "prefix": "10.0.1.1/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:00",
+    "port": 4
+   },
+   {
+    "prefix": "10.0.2.2/32",
+    "action": "forward",
+    "mac": "08:00:00:00:04:00",
+    "port": 3
+   },
+   {
+    "prefix": "10.0.3.3/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:33",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.4.4/32",
+    "action": "forward",
+    "mac": "08:00:00:00:04:44",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.3.99/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:33",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.9.99/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:33",
+    "port": 1
+   }
+  ],
+  "s3": [
+   {
+    "prefix": "10.0.1.1/32",
+    "action": "forward",
+    "mac": "08:00:00:00:01:00",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.2.2/32",
+    "action": "forward",
+    "mac": "08:00:00:00:01:00",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.3.3/32",
+    "action": "forward",
+    "mac": "08:00:00:00:02:00",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.4.4/32",
+    "action": "forward",
+    "mac": "08:00:00:00:02:00",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.3.99/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:00",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.9.99/32",
+    "action": "forward",
+    "mac": "08:00:00:00:03:00",
+    "port": 2
+   }
+  ],
+  "s4": [
+   {
+    "prefix": "10.0.1.1/32",
+    "action": "forward",
+    "mac": "08:00:00:00:01:00",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.2.2/32",
+    "action": "forward",
+    "mac": "08:00:00:00:01:00",
+    "port": 2
+   },
+   {
+    "prefix": "10.0.3.3/32",
+    "action": "forward",
+    "mac": "08:00:00:00:02:00",
+    "port": 1
+   },
+   {
+    "prefix": "10.0.4.4/32",
+    "action": "forward",
+    "mac": "08:00:00:00:02:00",
+    "port": 1
+   }
+  ]
+ },
+ "host_addresses": {
+  "h1": [
+   "10.0.1.1"
+  ],
+  "h2": [
+   "10.0.2.2"
+  ],
+  "h3": [
+   "10.0.3.3",
+   "10.0.3.99",
+   "10.0.9.99"
+  ],
+  "h4": [
+   "10.0.4.4"
+  ]
+ }
+}

@@ -1,0 +1,7 @@
+# Made when you run the code; not part of your work.
+# The captures under */analyze/ are given to you and stay.
+__pycache__/
+*.pyc
+/*/build/
+/*/logs/
+/*/pcaps/

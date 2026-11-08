@@ -1,0 +1,75 @@
+# s1 and s2 per-port captures (h1 and h2 sit on s1, h3 and h4 on s2): the first frames on each port, in and out
+
+## s1-eth1_in.pcap: 4 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+3	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+4	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s1-eth1_out.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s1-eth2_in.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s1-eth2_out.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s1-eth3_in.pcap: 1 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s1-eth3_out.pcap: 3 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+3	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s1-eth4_in.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s1-eth4_out.pcap: 2 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s2-eth1_in.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s2-eth1_out.pcap: 3 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x0800	10.0.1.1	10.0.3.3	61	good		1234	4321		
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x0800	10.0.1.1	10.0.3.3	61	good		1234	4321		
+3	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x0800	10.0.1.1	10.0.3.3	59	good		1234	4321
+
+## s2-eth2_in.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s2-eth2_out.pcap: 1 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x0800	10.0.1.1	10.0.4.4	61	good		1234	4321
+
+## s2-eth3_in.pcap: 2 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s2-eth3_out.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+
+
+## s2-eth4_in.pcap: 2 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+1	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234									
+2	08:00:00:00:01:11	ff:ff:ff:ff:ff:ff	0x1234
+
+## s2-eth4_out.pcap: 0 frames in the whole run; the first few:
+frame	eth.src	eth.dst	eth.type	ip.src	ip.dst	ttl	ip.csum	icmp	udp.src	udp.dst	tcp.src	tcp.dst
+

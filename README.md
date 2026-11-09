@@ -29,7 +29,6 @@ You build a small network's switches in P4, one job at a time. The folders are i
 | extra-source-routing/analyze/, stack_puzzles.py, stack_answers.py | Recorded runs (reference, mystery-E) and two port-stack puzzles, for practice | optional: fill in ANSWERS |
 | utils/ | The p4lang runner, the P4Runtime library, the check harness and ptfrun.py, which runs the packet tests | nothing, it is given |
 
-Leave these as they are, because grading restores clean copies: check.py, controller.py, send_route.py, every tests/ folder, linux.sh, tables.json, ptf-tables.json, the puzzle runners and their data files, every analyze/ folder, the runtime entries and utils/.
 
 ## Run
 
@@ -51,7 +50,7 @@ Then, inside it:
 | make stop | Clean up after an interrupted run |
 | make clean | Remove build/ |
 
-Captures land in build/pcaps/ (your switch: _in.pcap arrived on a port, _out.pcap left it) and build/pcaps-linux/ (the Linux device). If you set up the container before 9 November, run `docker pull git.trevon.dev/cs4220/cs4220-net:fall26` once first: the image now includes the packet-test tool, PTF.
+Captures land in build/pcaps/ (your switch: _in.pcap arrived on a port, _out.pcap left it) and build/pcaps-linux/ (the Linux device). If you set up the container before 9 November, run `docker pull git.trevon.dev/cs4220/cs4220-net:fall26` once first. The image now includes the packet-test tool, PTF.
 
 Some parts also run on plain Python 3, without the container, each from its own folder:
 

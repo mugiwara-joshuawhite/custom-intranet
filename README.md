@@ -32,10 +32,25 @@ You build a small network's switches in P4, one job at a time. The folders are i
 
 ## Run
 
-Start the course container from a part's folder (the course environment help page says how to build or pull the image):
+The first time, download the image and give it its short name (the course environment help page has more):
+
+```text
+docker pull git.trevon.dev/cs4220/cs4220-net:fall26
+docker tag git.trevon.dev/cs4220/cs4220-net:fall26 cs4220-net
+```
+
+Start the container from this folder, the one that holds utils/, because every part's Makefile reads ../utils. Then go into a part:
 
 ```text
 docker run --rm -it --privileged --network none -v "$PWD":/work cs4220-net
+cd 1-routing
+```
+
+On Windows:
+
+```text
+docker run --rm -it --privileged --network none -v "${PWD}:/work" cs4220-net
+cd 1-routing
 ```
 
 Then, inside it:
@@ -50,7 +65,7 @@ Then, inside it:
 | make stop | Clean up after an interrupted run |
 | make clean | Remove build/ |
 
-Captures land in build/pcaps/ (your switch: _in.pcap arrived on a port, _out.pcap left it) and build/pcaps-linux/ (the Linux device). If you set up the container before 9 November, run `docker pull git.trevon.dev/cs4220/cs4220-net:fall26` once first. The image now includes the packet-test tool, PTF.
+Captures land in build/pcaps/ (your switch: _in.pcap arrived on a port, _out.pcap left it) and build/pcaps-linux/ (the Linux device). If you pulled the image before 9 November, run the pull and tag commands again. The image now includes the packet-test tool, PTF.
 
 Some parts also run on plain Python 3, without the container, each from its own folder:
 

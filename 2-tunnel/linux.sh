@@ -5,7 +5,8 @@ set -e
 if ! ip link add gre-probe type gre local 192.0.2.1 remote 192.0.2.2 2>/dev/null; then
     echo "This computer's Linux kernel has no GRE support loaded, so the Linux tunnel cannot be built."
     echo "On a Linux computer, outside the container, run:  sudo modprobe ip_gre"
-    echo "then start the container again and rerun. Your P4 tunnel's own tests do not need this."
+    echo "then start the container again and rerun. With Docker Desktop on Windows or a Mac,"
+    echo "tell the instructor instead. Your P4 tunnel's own tests do not need this."
     exit 1
 fi
 ip link del gre-probe

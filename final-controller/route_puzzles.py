@@ -1,4 +1,6 @@
-"""Part 2 challenge route: three puzzles against flawed controllers. Given; you do not change it.
+"""The controller (final option) practice: three puzzles against flawed controllers.
+
+Given; you do not change it.
 
 Each puzzle's controller is recorded in route_suspects.json as the tables it
 installs for every set of failed switch links. An answer names a source host, a

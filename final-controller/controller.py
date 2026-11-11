@@ -1,4 +1,4 @@
-"""Part 2: the controller. Given; you do not change it.
+"""The controller (final option). Given; you do not change it.
 
 Pushes your part 1 program to every switch over P4Runtime, then installs the
 ipv4_lpm entries routing.next_hops() computes. Run it while the network is up

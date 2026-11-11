@@ -1,4 +1,4 @@
-"""Part 2: compute every switch's forwarding table from the topology.
+"""The controller (final option): compute every switch's forwarding table from the topology.
 
 You write next_hops().
 

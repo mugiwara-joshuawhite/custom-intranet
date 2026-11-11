@@ -1,6 +1,6 @@
 /* -*- P4_16 -*- */
 /*
- * Part 3: ECMP. You complete each YOUR TASK.
+ * ECMP (final option). You complete each YOUR TASK.
  *
  * Part 1 sent every packet for a destination the same way. Here a switch with
  * several equally short paths spreads traffic across them, the way data-center

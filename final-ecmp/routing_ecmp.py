@@ -1,6 +1,6 @@
-"""Part 3: every equally short next hop, not just one. You write ecmp_next_hops().
+"""ECMP (final option): every equally short next hop, not just one. You write ecmp_next_hops().
 
-Builds on your part 2 routing.py (imported below): the same topology, the same
+Builds on your controller's routing.py (imported below): the same topology, the same
 MACs, and the same shortest-path idea. The difference is that when two
 neighbors are equally close to a host, the switch keeps both.
 
@@ -13,7 +13,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "final-controller"))
-import routing  # noqa: E402, F401  (your part 2 code, for your ecmp_next_hops)
+import routing  # noqa: E402, F401  (your controller code, for your ecmp_next_hops)
 
 
 def ecmp_next_hops(topo, down=()):

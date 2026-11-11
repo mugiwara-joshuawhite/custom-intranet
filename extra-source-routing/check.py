@@ -1,4 +1,6 @@
-"""Part 4 checks. Run `make check` inside the course container. Given; do not change it.
+"""Source routing (extra credit) checks. Given; do not change it.
+
+Run `make check` inside the course container.
 
 Each check sends one packet from h1 along a chosen path and watches where it
 arrives, which spine link it crossed, and its TTL on arrival.

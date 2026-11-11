@@ -1,4 +1,6 @@
-"""Part 3 checks. Run `make check` inside the course container. Given; do not change it.
+"""ECMP (final option) checks. Given; do not change it.
+
+Run `make check` inside the course container.
 
 Traffic from h1 to h3 can cross either spine: out s1's port 3 (to s3) or
 port 4 (to s4). The checks count the packets on those two links while iperf3

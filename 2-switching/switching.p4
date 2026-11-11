@@ -1,6 +1,6 @@
 /* -*- P4_16 -*- */
 /*
- * Segment 1: a learning Ethernet switch in P4 (weeks 3 and 4). You complete each YOUR TASK.
+ * Part 2: a learning Ethernet switch in P4 (week 4). You complete each YOUR TASK.
  *
  * The switch does what the week 4 switch did: it forwards a frame out the
  * port where its destination MAC was last seen, and floods it to every other

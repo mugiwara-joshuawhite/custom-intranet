@@ -57,12 +57,12 @@ Then, inside it:
 
 | Command | What it does |
 | :--- | :--- |
-| make | Compile the P4 program |
+| make | Compile the P4 program. In 2-switching/ and 2-tunnel/, plain make does what make test does |
 | make test | Parts 1 and 2 and ECMP: compile, start the switch, run the packet tests; ends with how many passed and which capture to open |
 | make linux | Part 2: run the same tests against the Linux bridge or GRE tunnel in linux.sh, to compare |
-| make check | Part 1, the controller and source routing: start the network, run the checks, then stop it |
-| make run | Open an interactive Mininet prompt |
-| make stop | Clean up after an interrupted run |
+| make check | Part 1, the controller, ECMP and source routing: start the network, run the checks, then stop it |
+| make run | Open an interactive Mininet prompt. Not in 2-switching/ or 2-tunnel/, which have only make test, make linux and make clean |
+| make stop | Clean up after an interrupted run. Not in 2-switching/ or 2-tunnel/ |
 | make clean | Remove build/ |
 
 Captures land in build/pcaps/ (your switch: _in.pcap arrived on a port, _out.pcap left it) and build/pcaps-linux/ (the Linux device). If you pulled the image before 9 November, run the pull and tag commands again. The image now includes the packet-test tool, PTF.

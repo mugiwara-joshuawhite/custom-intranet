@@ -2,6 +2,17 @@
 
 ## Tasks, and member who did them
 
+Tasks:
+- Q0/Q1
+- Q2
+- MyParser.start()
+- MyIngress.ipv4_forward()
+- MyIngress.apply()
+- MyDeparser.apply()
+- Q3
+- Q4
+
+Each member therefore takes 2 questions and 2 tasks
 
 ## Questions and Answers
 

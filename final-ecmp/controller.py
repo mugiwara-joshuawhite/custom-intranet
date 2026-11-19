@@ -1,6 +1,6 @@
-"""Part 3: the ECMP controller. Given; you do not change it.
+"""ECMP (final option): the ECMP controller. Given; you do not change it.
 
-Like part 2's controller, but for each switch and host it installs one
+Like the controller's controller.py, but for each switch and host it installs one
 ecmp_group entry (the destination's group number and size) and one ecmp_nhop
 entry per next hop in the group. Groups come from routing_ecmp.ecmp_next_hops().
 

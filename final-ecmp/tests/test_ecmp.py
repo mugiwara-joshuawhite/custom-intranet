@@ -50,7 +50,7 @@ class LocalHostOnePath(EcmpTest):
             raise AssertionError(f"h2 is on s1's port 2, a group of one next hop; "
                                  f"the packet left by port {port}")
         if got[IP].ttl != 63 or got.dst != H2_MAC or got.src != S1_PORT1_MAC:
-            raise AssertionError(f"set_nhop should forward as part 2 did: "
+            raise AssertionError(f"set_nhop should forward as part 1 did: "
                                  f"TTL 63 (got {got[IP].ttl}), "
                                  f"destination MAC {H2_MAC} (got {got.dst}), "
                                  f"source {S1_PORT1_MAC} (got {got.src})")

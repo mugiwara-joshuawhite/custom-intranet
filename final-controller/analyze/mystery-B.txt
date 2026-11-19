@@ -1,4 +1,4 @@
-# Project 4 part 2: next_hops() tables for ../topo/topology.json
+# Custom Intranet controller: next_hops() tables for ../topo/topology.json
 # a controller with one bug
 #
 # scenario: after the s1-s3 link fails

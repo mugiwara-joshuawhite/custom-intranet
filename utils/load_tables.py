@@ -1,4 +1,4 @@
-"""Load a segment's table entries into the switch, then say ready. Given; do not edit.
+"""Load a part's table entries into the switch, then say ready. Given; do not edit.
 
     python3 ../utils/load_tables.py tables.json      # started for you by make test
 

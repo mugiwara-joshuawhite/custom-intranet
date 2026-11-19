@@ -1,4 +1,4 @@
-"""Run a segment's packet tests against your P4 program. Given; do not edit.
+"""Run a part's packet tests against your P4 program. Given; do not edit.
 
     python3 ../utils/ptfrun.py switching.p4 --ports 3 --setup "python3 controller.py --ports 3"
 

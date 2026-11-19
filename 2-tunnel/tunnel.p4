@@ -1,6 +1,6 @@
 /* -*- P4_16 -*- */
 /*
- * Segment 4: a GRE tunnel endpoint in P4 (week 11). You complete each YOUR TASK.
+ * Part 2: a GRE tunnel endpoint in P4 (week 11). You complete each YOUR TASK.
  *
  * This switch is R1 from week 11's trace. Port 0 faces A's network
  * (10.1.0.0/24); port 1 faces the Internet. A packet from A to B's network

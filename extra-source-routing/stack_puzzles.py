@@ -1,8 +1,8 @@
-"""Part 4 challenge route: two source-route puzzles. Given; you do not change it.
+"""Source routing (extra credit) practice: two source-route puzzles. Given; you do not change it.
 
 An answer is a destination host and the port stack send_route.py would put on
 a packet from h1, top entry first. This runner follows the packet over
-../topo/topology.json the way the part 4 data plane handles it: a switch takes
+../topo/topology.json the way the source-routing data plane handles it: a switch takes
 the top entry, sends the packet out that port and removes the entry, lowering
 the IPv4 TTL by one; the switch that uses the last entry changes the EtherType
 back to IPv4. A switch that receives a packet with no entry left drops it. A

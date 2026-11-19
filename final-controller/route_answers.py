@@ -1,4 +1,4 @@
-"""Part 2 challenge route: your answers. You fill in all three.
+"""The controller (final option) practice: your answers. You fill in all three.
 
 Each answer is a source host, a destination host and a list of switch links to
 fail, for example {"src": "h2", "dst": "h3", "down": ["s2-s4"]}; an empty list

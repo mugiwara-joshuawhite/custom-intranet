@@ -1,4 +1,4 @@
-"""Part 1 challenge route: your answers. You fill in all four.
+"""Part 1 practice: your answers. You fill in all four.
 
 Each answer is a source host and a destination address, for example
 {"src": "h1", "dst": "10.0.2.2"}. L-32 and L-16 also need the TTL you expect the

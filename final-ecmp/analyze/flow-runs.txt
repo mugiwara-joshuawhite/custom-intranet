@@ -1,4 +1,4 @@
-# Reference part 3 (correct ecmp.p4 and routing_ecmp.py), recorded in the course container.
+# Reference ECMP, final option (correct ecmp.p4 and routing_ecmp.py), recorded in the course container.
 # Each run: h3 iperf3 -s -1 -p 5201; read s1's TX packets on ports 3 (to s3) and 4 (to s4);
 # h1 iperf3 -c 10.0.3.3 -p 5201 -t 4 -P <flows>; read them again. One network for all nine runs.
 # sports: the TCP source port of each data stream (iperf3's own control connection is not listed).

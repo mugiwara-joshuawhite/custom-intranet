@@ -1,8 +1,8 @@
 /* -*- P4_16 -*- */
 /*
- * Part 4: source routing. You complete each YOUR TASK.
+ * Source routing (extra credit). You complete each YOUR TASK.
  *
- * In parts 1 to 3 the switches chose the path from their tables. Here the
+ * In the earlier parts the switches chose the path from their tables. Here the
  * sender chooses it: between the Ethernet and IPv4 headers it puts a stack of
  * source-route entries, one per switch, each naming the port to leave by.
  * Each switch reads the top entry, removes it, and sends the packet out that

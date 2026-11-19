@@ -1,4 +1,4 @@
-"""Part 1 challenge route: four longest-prefix-match puzzles. Given; you do not change it.
+"""Part 1 practice: four longest-prefix-match puzzles. Given; you do not change it.
 
 lpm_tables.json holds every switch's ipv4_lpm entries during part 1's last
 check: the supplied runtime entries plus the overlapping /16, /24 and probe /32

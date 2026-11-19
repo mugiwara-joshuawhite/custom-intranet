@@ -1,4 +1,6 @@
-"""Part 2 checks. Run `make check` inside the course container. Given; do not change it.
+"""The controller (final option) checks. Given; do not change it.
+
+Run `make check` inside the course container.
 
 The switches start with empty tables; the checks run your controller, then
 test the network it built, then take a link down and run it again.

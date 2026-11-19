@@ -1,4 +1,4 @@
-"""Part 3 challenge route: two hash puzzles on s1's ECMP choice. Given; you do not change it.
+"""ECMP (final option) practice: two hash puzzles on s1's ECMP choice. Given; you do not change it.
 
 From h1 to h3, s1 has two equally short next hops: select 0 is port 3 (to the
 spine s3) and select 1 is port 4 (to the spine s4). bmv2 computes the select

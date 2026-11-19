@@ -1,4 +1,4 @@
-"""Part 3 challenge route: your answers. You fill in both.
+"""ECMP (final option) practice: your answers. You fill in both.
 
 Every flow is UDP from h1 (10.0.1.1) to h3 (10.0.3.3).
 H-same: four different source ports within 8 consecutive numbers and one

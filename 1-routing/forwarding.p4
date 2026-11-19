@@ -5,8 +5,8 @@
  * The switch parses Ethernet and IPv4, looks up the destination address in
  * ipv4_lpm (longest-prefix match), and forwards the packet out the port the
  * table entry names, the way a router's forwarding table does. The table's
- * entries come from s1-runtime.json to s4-runtime.json in this part; in part 2
- * your own controller will install them.
+ * entries come from s1-runtime.json to s4-runtime.json in this part; in the final
+ * option your own controller installs them.
  *
  * Structure after p4lang/tutorials exercises/basic (Apache-2.0; see
  * ../utils/NOTICE.md). Language reference: https://p4.org/specifications/

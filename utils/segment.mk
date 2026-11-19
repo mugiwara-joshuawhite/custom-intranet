@@ -1,4 +1,4 @@
-# Shared rules for the packet-test segments (2-switching/, 2-tunnel/). Each Makefile
+# Shared rules for part 2's packet tests (2-switching/, 2-tunnel/). Each Makefile
 # sets P4, PORTS and SETUP, then includes this file. Run inside the course
 # container, started with --privileged.
 #

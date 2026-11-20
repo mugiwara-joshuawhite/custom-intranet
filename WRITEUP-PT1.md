@@ -82,3 +82,15 @@ The checksum must be recomputed because it covers the IPv4 header, and the TTL i
 The decision is made by the table's default action, not by the program's control flow. In MyIngress, `ipv4_lpm` has `default_action = drop();`, so any IPv4 packet that matches no entry is dropped by the table itself. The `apply` block only decides whether to do the lookup (when the IPv4 header is valid); it has no else-branch for misses. (Non-IPv4 frames skip the table entirely, so nothing sets their egress port and they leave on port 0.)
 
 For a table with 192.0.2.0/24 forwarding and 192.0.2.64/26 dropping: 192.0.2.70 is in both prefixes (the /26 covers 192.0.2.64 to 192.0.2.127). Longest-prefix match picks the most specific entry, the /26, so the packet is dropped. The default action is not used because an entry matched. The /24 forward only applies to addresses outside the /26 (e.g. 192.0.2.10), and addresses outside the /24 entirely fall to the default action.
+
+## AI Use & Verification Record (Dominick)
+
+**Tool and task delegated:** Claude Code (Claude Sonnet 5.5). I asked it to write my half of the assignment: `MyIngress.apply()`, `MyDeparser.apply()` and the answers to questions 3 and 4. It also ran the tests in the course container.
+
+**Consequential suggestion:** Wrap the `ipv4_lpm.apply()` call in `if (hdr.ipv4.isValid())`, so only packets with an IPv4 header are looked up. I used this as suggested. Claude also wanted the drop decision for unmatched packets to stay in the table's `default_action` rather than in the `apply` block, and I kept that, since it is the answer to question 4. I did not accept its claim that non-IPv4 frames leave on port 0 without checking it against the code.
+
+**How it was verified:** I ran `make test` in `1-routing/` in the course container, using the branch with Josh's code from `main` plus my changes. All 6 packet tests passed (port, TTL, MACs, checksum, drop, longest match). `make check` passed 4 of 4. I checked the answer to question 3 against `ipv4_forward` and the checksum block in `forwarding.p4`. I checked the answer to question 4 against the table's `default_action = drop()` and by working out which addresses the 192.0.2.64/26 covers (.64 to .127, so .70 is inside it).
+
+**Limitation encountered:** Claude could not clone the repo into its scratch folder because the path was too long, and Docker had to be started by hand before it could run any tests. It also cannot see the assignment's grading, so it cannot tell whether the answers are what the instructor expects. The `make check` output also showed that the earlier guesses in Josh's answer 2 do not match the real behavior for 10.0.3.99 and 10.0.9.99.
+
+**Decisions I retained:** The split of work with Josh (he did questions 1 and 2, `MyParser.start()` and `ipv4_forward()`; I did the rest). My code and answers go on my own branch, not `main`. I chose which of Claude's wording to keep in the answers and I stand behind them.

@@ -54,6 +54,15 @@ parser MyParser(packet_in packet, out headers hdr, inout metadata meta,
         /* YOUR TASK: extract the Ethernet header, then move to a state that
          * extracts IPv4 when the EtherType says the payload is IPv4. Any
          * other frame is accepted with only Ethernet parsed. */
+         packet.extract(hdr.ethernet);  // Extract ethernet header
+         transition select(hdr.ethernet.etherType) {    // move to state that extracts on ethertype
+            TYPE_IPV4: ext_ipv4;
+            default: accept;    // why
+        }
+    }
+
+    state ext_ipv4 {
+        packet.extract(hdr.ipv4);
         transition accept;
     }
 }
@@ -73,6 +82,10 @@ control MyIngress(inout headers hdr, inout metadata meta,
         /* YOUR TASK: send the packet out `port`; the frame's new source is
          * the MAC it was addressed to, and its new destination is the next
          * hop's; and do what every router does to the TTL. */
+        standard_metadata.egress_spec = port;
+        hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
+        hdr.ethernet.dstAddr = dstAddr;
+        hdr.ipv4.ttl = hdr.ipv4.ttl - 1;
     }
 
     table ipv4_lpm {

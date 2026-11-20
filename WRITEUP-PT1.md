@@ -12,7 +12,6 @@ Tasks:
 - Q3 [Dominick]
 - Q4 [Dominick]
 
-Each member therefore takes 2 questions and 2 tasks
 
 ## Questions and Answers
 

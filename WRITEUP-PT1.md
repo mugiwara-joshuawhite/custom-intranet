@@ -85,7 +85,7 @@ For a table with 192.0.2.0/24 forwarding and 192.0.2.64/26 dropping: 192.0.2.70 
 
 ## AI Use & Verification Record (Dominick)
 
-**Tool and task delegated:** Claude Code (Claude Sonnet 5.5). I asked it to write my half of the assignment: `MyIngress.apply()`, `MyDeparser.apply()` and the answers to questions 3 and 4. It also ran the tests in the course container.
+**Tool and task delegated:** Claude Code (Claude Sonnet 5.5). I asked it to help write my half of the assignment: `MyIngress.apply()`, `MyDeparser.apply()` and help with writing the answers (grammar etc) to questions 3 and 4.
 
 **Consequential suggestion:** Wrap the `ipv4_lpm.apply()` call in `if (hdr.ipv4.isValid())`, so only packets with an IPv4 header are looked up. I used this as suggested. Claude also wanted the drop decision for unmatched packets to stay in the table's `default_action` rather than in the `apply` block, and I kept that, since it is the answer to question 4. I did not accept its claim that non-IPv4 frames leave on port 0 without checking it against the code.
 

@@ -98,7 +98,9 @@ control MyIngress(inout headers hdr, inout metadata meta,
     apply {
         /* YOUR TASK: this looks up every packet, including ones with no IPv4
          * header to match on. Look up only packets that have one. */
-        ipv4_lpm.apply();
+        if (hdr.ipv4.isValid()) {
+            ipv4_lpm.apply();
+        }
     }
 }
 
@@ -122,7 +124,8 @@ control MyComputeChecksum(inout headers hdr, inout metadata meta) {
 
 control MyDeparser(packet_out packet, in headers hdr) {
     apply {
-        /* YOUR TASK: put the headers back on the packet, outermost first. */
+        packet.emit(hdr.ethernet);
+        packet.emit(hdr.ipv4);  // emit is a no-op if ipv4 is invalid
     }
 }
 
